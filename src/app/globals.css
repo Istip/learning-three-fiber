@@ -23,3 +23,7 @@ h3 {
 h4 {
   letter-spacing: -0.75px;
 }
+
+body {
+  overflow-x: hidden;
+}
