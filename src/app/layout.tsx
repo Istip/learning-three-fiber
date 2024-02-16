@@ -8,7 +8,7 @@ const font = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ThreeJs and brothers testing ground",
+  title: "LEARNING THREE",
   description: "We gonna rock!",
 };
 
