@@ -1,15 +1,12 @@
+import Box from "@/components/Box/Box";
 import CameraWrapper from "@/components/Utils/CameraWrapper";
 
 export default function Home() {
   return (
     <>
-      <CameraWrapper preset="city">
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
+      <CameraWrapper preset="apartment">
+        <Box position={[1, 0, 0]} />
+        <Box position={[-1, 0, 0]} />
       </CameraWrapper>
     </>
   );
