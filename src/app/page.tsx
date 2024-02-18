@@ -1,16 +1,14 @@
+"use client";
+
 import CameraWrapper from "@/components/Utils/CameraWrapper";
+import { Canvas } from "@react-three/fiber";
 
 export default function Home() {
   return (
-    <>
-      <CameraWrapper preset="city">
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
-      </CameraWrapper>
-    </>
+    <div className="w-screen h-screen bg-stone-900">
+      <Canvas>
+        <CameraWrapper preset="sunset" />
+      </Canvas>
+    </div>
   );
 }
