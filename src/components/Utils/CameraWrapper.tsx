@@ -1,7 +1,15 @@
 "use client";
 
-import { Environment, Float, Image, OrbitControls } from "@react-three/drei";
+import {
+  Environment,
+  Float,
+  Image,
+  Line,
+  MeshDistortMaterial,
+  OrbitControls,
+} from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+import { useRef } from "react";
 
 interface Props {
   children?: React.ReactNode;
@@ -21,9 +29,11 @@ interface Props {
 }
 
 const CameraWrapper = ({ children, orbitControls = true, preset }: Props) => {
+  const mesh = useRef(null as any);
   const stuff = useThree((state) => state.viewport);
 
   console.log("✅  stuff:", stuff);
+
   return (
     <>
       {orbitControls && <OrbitControls />}
@@ -36,9 +46,9 @@ const CameraWrapper = ({ children, orbitControls = true, preset }: Props) => {
         </mesh>
       </Float>
       <Float>
-        <mesh scale={stuff.width / 7} position={[0, -1, -8]} rotation-x={5}>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="orange" />
+        <mesh>
+          <sphereGeometry args={[1, 64, 64]} />
+          <MeshDistortMaterial roughness={0.5} color="#1fb2f5" />
         </mesh>
       </Float>
       <Float>
